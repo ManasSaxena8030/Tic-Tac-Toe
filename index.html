@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe - Neon Arena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <main class="app-container">
+        <header>
+            <h1 class="game-title">TIC <span class="accent-x">TAC</span> <span class="accent-o">TOE</span></h1>
+            <p class="subtitle">Neon Arena</p>
+        </header>
+
+        <!-- Turn Indicator Section -->
+        <div class="turn-indicator-wrapper">
+            <div class="turn-indicator" id="turn-indicator">
+                <div class="turn-slot active" id="turn-x-slot">
+                    <span class="x-symbol">✕</span> Player X
+                </div>
+                <div class="turn-slot" id="turn-o-slot">
+                    <span class="o-symbol">◯</span> Player O
+                </div>
+                <div class="active-slider" id="turn-slider"></div>
+            </div>
+        </div>
+
+        <!-- Glass Game Card Wrapper -->
+        <div class="game-card">
+            <div class="container">
+                <div class="game">
+                    <button class="box" aria-label="Cell 1"></button>
+                    <button class="box" aria-label="Cell 2"></button>
+                    <button class="box" aria-label="Cell 3"></button>
+                    <button class="box" aria-label="Cell 4"></button>
+                    <button class="box" aria-label="Cell 5"></button>
+                    <button class="box" aria-label="Cell 6"></button>
+                    <button class="box" aria-label="Cell 7"></button>
+                    <button class="box" aria-label="Cell 8"></button>
+                    <button class="box" aria-label="Cell 9"></button>
+                </div>
+            </div>
+
+            <!-- Scoreboard -->
+            <div class="scoreboard">
+                <div class="score-card x-card">
+                    <span class="player-label">X Wins</span>
+                    <span class="score-value" id="score-x">0</span>
+                </div>
+                <div class="score-card tie-card">
+                    <span class="player-label">Ties</span>
+                    <span class="score-value" id="score-ties">0</span>
+                </div>
+                <div class="score-card o-card">
+                    <span class="player-label">O Wins</span>
+                    <span class="score-value" id="score-o">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="control-buttons">
+            <button id="reset" class="control-btn btn-reset">Reset Board</button>
+            <button id="clear-scores" class="control-btn btn-clear">Reset Scores</button>
+        </div>
+    </main>
+
+    <!-- Overlay Winner / Draw Modal -->
+    <div class="msg-container hide" id="msg-container">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-glow"></div>
+            <div class="modal-badge-wrapper">
+                <div class="modal-badge" id="modal-badge">🏆</div>
+            </div>
+            <h2 id="message-title">Victory!</h2>
+            <p id="message">Winner is Player X</p>
+            <div class="modal-actions">
+                <button id="NEWGAME" class="modal-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
